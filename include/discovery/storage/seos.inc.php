@@ -2,7 +2,6 @@
 
 if ($device['os'] == 'seos') {
     $dsktable_array = snmpwalk_cache_oid($device, 'rbnSRStorageDescr', null, 'RBN-SYS-RESOURCES-MIB'); 
-    //print_r($dsktable_array);
     foreach($dsktable_array as $key => $line)
     {
      if(preg_match("/Var Disk/",$line[rbnSRStorageDescr]))
